@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Log</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <h2>Change Log</h2>
+        <div id="filterBox">
+			<div class="dropdown">
+				<a href="/changeLog">
+					<button class="dropbtn">View All</button>
+				</a>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">By User</button>
+				<div class="dropdown-content">
+					<!-- iterates through change logs, identifies users and filters out repeated users -->
+					<% let users = []; %>
+					<% rows.forEach(function(result) { %>
+						<% if(users.includes(result.user_id) === false) { %>
+							<a href=<%= `/changeLog/byUser/${result.user_id}` %>><%= result.user_id %></a>
+							<% users.push(result.user_id) %>
+						<% } %>
+					<% }); %>
+				</div>
+			</div>
+            <div class="dropdown">
+				<button class="dropbtn">By Product</button>
+				<div class="dropdown-content">
+					<!-- iterates through change logs, identifies products and filters out repeated products -->
+					<% let products = []; %>
+					<% rows.forEach(function(result) { %>
+						<% if(products.includes(result.product_id) === false) { %>
+							<a href=<%= `/changeLog/byProduct/${result.product_id}` %>><%= result.product_id %></a>
+							<% products.push(result.product_id) %>
+						<% } %>
+					<% }); %>
+				</div>
+			</div>
+			<div class="dropdown">
+                <div id="dateRangeBox">
+                    <p>Check by Date</p>
+                    <form method="GET" action="/changeLog/byDate">
+                        <div>
+                            <input type="date" class="form-control" id="floatingInput" placeholder="Start Date" name="start_date" require />
+                        </div>
+                        <div>
+                            <input type="date" class="form-control" id="floatingInput" placeholder="End Date" name="end_date" required />
+                        </div>
+                        <button class="dropbtn" type="submit">Check</button>
+                    </form>
+                 </div>
+			</div>
+        </div>
+        <div id="changeLogBox">
+            <table>
+                <tr>
+                  <th>Date</th>
+                  <th>User ID</th>
+                  <th>Product ID</th>
+                </tr>
+                <% rows.reverse().forEach(function(row) { %>
+                    <tr>
+                    <td><%= row.date_last_modified %></td>
+                    <td><%= row.user_id %></td>
+                    <td><%= row.product_id %></td>
+                    </tr>
+                <% }); %>  
+              </table>
+        </div>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

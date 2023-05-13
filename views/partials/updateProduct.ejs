@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <div id="manageProductsBox">
+            <form id="updateProductForm" method="POST" action="/manageProduct/updateProduct/<%= results[0].product_id %>" >
+                <div class="manageProduct">
+                    <img src=<%= results[0].product_img %>>
+                    <div>
+                        <label for="floatingInput">Product Name</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Product Name" value="<%= results[0].product_name %>" name="product_name" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Product Model</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Product Model" value="<%= results[0].product_model %>" name="product_model" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Manufacturer</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Manufacturer" value="<%= results[0].manufacturer %>" name="manufacturer" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Price</label>
+                        <input type="number" class="form-control" id="floatingInput" placeholder="Price" value="<%= results[0].price %>" name="price" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Stock on Hand</label>
+                        <input type="number" class="form-control" id="floatingInput" placeholder="Stock on Hand" value="<%= results[0].stock_on_hand %>" name="stock_on_hand" />
+                    </div>
+                </div>
+                <div id="productDetails">
+                    <div>
+                        <label for="floatingInput">Weight</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Weight" value="<%= results[0].weight %>" name="weight" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Dimensions</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="dimensions" value="<%= results[0].dimensions %>" name="dimensions" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">OS</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="OS" value="<%= results[0].OS %>" name="OS" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Screensize</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="screensize" value="<%= results[0].screensize %>" name="screensize" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Resolution</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="resolution" value="<%= results[0].resolution %>" name="resolution" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">CPU</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="CPU" value="<%= results[0].CPU %>" name="CPU" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">RAM</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="RAM" value="<%= results[0].RAM %>" name="RAM" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Storage</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="storage" value="<%= results[0].storage %>" name="storage" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Battery</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="battery" value="<%= results[0].battery %>" name="battery" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Rear Camera</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="rear_camera" value="<%= results[0].rear_camera %>" name="rear_camera" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Front Camera</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="front_camera" value="<%= results[0].front_camera %>"name="front_camera" />
+                    </div>
+                        <div id="individualProductbuttonBox">
+
+                                <button class="btn" type="submit">Update</button>
+                        </div>   
+                </form>
+            </div>
+        </div>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <h2>Manage Products:</h2>
+        <div id="manageProductsBox">
+            <% results.forEach(function(result) { %>
+                    <div class="manageProduct">
+                        <img src=<%= result.product_img %>>
+                        <div>
+                            <p><strong>Product ID:</strong></p>
+                            <p><%= result.product_id %></p>
+                        </div>
+                        <div>
+                            <p><strong>Name:</strong></p>
+                            <p><%= result.product_name %></p>
+                        </div>
+                        <div>
+                            <p><strong>Model:</strong></p>
+                            <p><%= result.product_model %></p>
+                        </div>
+                        <div>
+                            <p><strong>Manufacturer:</strong></p>
+                            <p><%= result.manufacturer %></p>
+                        </div>
+                        <div>
+                            <p><strong>Price:</strong></p>
+                            <p><%= result.price %></p>
+                        </div>
+                        <div>
+                            <p><strong>Stock:</strong></p>
+                            <p><%= result.stock_on_hand %></p>
+                        </div>
+                        <div id="buttonBox">
+                            <a href=<%=`/manageProduct/updateProduct/${result.product_id}` %>>
+                                <button class="btn" type="button" onclick="">Update</button>
+                            </a>
+                            <a href=<%=`/manageProduct/${result.product_id}` %>>
+                                <button class="btn" type="button">Delete</button>
+                            </a>
+                        </div>
+                    </div>
+            <% }); %>    
+            <a href=<%=`/manageProduct/addProduct` %>>
+                <button class="btn" type="button">Add Product</button>
+            </a>
+        </div>
+    </main>
+    <%- include('footer') %>
+    
+</body>
+</html>

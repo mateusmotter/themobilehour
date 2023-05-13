@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Manage Users</title>
+</head>
+<body>
+    
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <main>
+            <h2>Manage Users:</h2>
+            <div id="manageProductsBox">
+                <% results.forEach(function(result) { %>
+                        <div class="manageProduct">
+                            <div>
+                                <p><strong>User ID:</strong></p>
+                                <p><%= result.user_id %></p>
+                            </div>
+                            <div>
+                                <p><strong>First Name:</strong></p>
+                                <p><%= result.firstname %></p>
+                            </div>
+                            <div>
+                                <p><strong>Last Name:</strong></p>
+                                <p><%= result.lastname %></p>
+                            </div>
+                            <div>
+                                <p><strong>Role:</strong></p>
+                                <p><%= result.user_role %></p>
+                            </div>
+                            <div>
+                                <p><strong>Username:</strong></p>
+                                <p><%= result.username %></p>
+                            </div>
+                            <div id="buttonBox">
+                                <a href=<%=`/manageUsers/updateUser/${result.user_id}` %>>
+                                    <button class="btn" type="button" onclick="">Update</button>
+                                </a>
+                                <a href=<%=`/manageUsers/${result.user_id}` %>>
+                                    <button class="btn" type="button">Delete</button>
+                                </a>
+                            </div>
+                        </div>
+                <% }); %>
+                
+                <a href=<%=`/manageUsers/addUser` %>>
+                    <button class="btn" type="button">Add User</button>
+                </a>
+            </div>
+
+    </main>
+    <%- include('footer') %>
+    
+</body>
+</html>

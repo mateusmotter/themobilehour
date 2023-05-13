@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <h2>Add Details Below:</h2>
+        <div id="formBox">
+            <form id="addProductForm" method="POST" action="/manageProduct/addProduct">
+                <div id="inputBox">
+                    <div>
+                        <label for="floatingInput">Product Name</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Product Name" name="product_name" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Product Model</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Product Model" name="product_model" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Manufacturer</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Manufacturer" name="manufacturer" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Price</label>
+                        <input type="number" class="form-control" id="floatingInput" placeholder="Price" name="price" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Stock on Hand</label>
+                        <input type="number" class="form-control" id="floatingInput" placeholder="Stock on Hand" name="stock_on_hand" required />
+                    </div>
+                    <!-- items from Feature table -->
+                    <div>
+                        <label for="floatingInput">Weight</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Weight" name="weight" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Dimensions</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="dimensions" name="dimensions" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">OS</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="OS" name="OS" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Screensize</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="screensize" name="screensize" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Resolution</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="resolution" name="resolution" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">CPU</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="CPU" name="CPU" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">RAM</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="RAM" name="RAM" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Storage</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="storage" name="storage" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Battery</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="battery" name="battery" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Rear Camera</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="rear_camera" name="rear_camera" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Front Camera</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="front_camera" name="front_camera" required />
+                    </div>
+                </div>    
+                <div id="addProductButton">
+                    <button class="btn btn-primary" type="submit">Add Product</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

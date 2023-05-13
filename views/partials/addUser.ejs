@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <h2>Add Details Below:</h2>
+        <div id="formBox">
+            <form id="addProductForm" method="POST" action="/manageUsers/addUser">
+                <div id="inputBox">
+                    <div>
+                        <label for="floatingInput">First Name</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="First Name" name="firstname" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Lastname</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Lastname" name="lastname" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Role</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Role" name="user_role" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Username</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username" required />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Password</label>
+                        <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="user_password" required />
+                    </div>
+                <div id="addProductButton">
+                    <button class="btn btn-primary" type="submit">Add User</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>

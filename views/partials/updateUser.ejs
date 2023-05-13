@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Update Users</title>
+</head>
+<body>
+    <%- include('header') %>
+    <%- include('underHeader') %>
+    <main>
+        <div id="manageProductsBox">
+            <form id="updateProductForm" method="POST" action="/manageUsers/updateUser/<%= results[0].user_id%>">
+                <div class="manageProduct">
+                    <div>
+                        <label for="floatingInput">First Name</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="First Name" value="<%= results[0].firstname %>" name="firstname" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Lastname</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Lastname" value="<%= results[0].lastname %>" name="lastname" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Role</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Role" value="<%= results[0].user_role %>" name="user_role" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">Username</label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Username" value="<%= results[0].username %>" name="username" />
+                    </div>
+                    <div>
+                        <label for="floatingInput">New Password</label>
+                        <input type="password" class="form-control" id="floatingInput" placeholder="Password" name="user_password">
+                    </div>
+                    <div id="individualProductbuttonBox">
+                        <button class="btn" type="submit">Update</button>
+                    </div> 
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('footer') %>
+    
+</body>
+</html>

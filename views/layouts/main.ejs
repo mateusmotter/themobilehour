@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>The Mobile Hour</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<%- include('../partials/header') %>
+	<main>
+		<img id='main-image' src="/images/main_picture.jpg" alt="phone-on-table">
+		<h2>Featured Products</h2>
+		<div id="filterBox">
+			<div class="dropdown">
+				<a href="/">
+					<button class="dropbtn">View All</button>
+				</a>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">By Brand</button>
+				<div class="dropdown-content">
+					<!-- iterates through products, identifies manufactures and filters out repeated manufacturers -->
+					<% let brands = []; %>
+					<% results.forEach(function(result) { %>
+						<% if(brands.includes(result.manufacturer) === false) { %>
+							<a href=<%= `/filter/${result.manufacturer}` %>><%= result.manufacturer %></a>
+							<% brands.push(result.manufacturer) %>
+						<% } %>
+					<% }); %>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">By Price</button>
+				<div class="dropdown-content">
+					<a href="/lower">Lower to Higher</a>
+					<a href="/higher">Higher to Lower</a>
+				</div>
+			</div>
+		</div>
+		<div id="products">
+				<% results.forEach(function(result) { %>
+						<a href= <%=`/product/${result.product_id}` %>>
+							<div class="product">
+								<img src=<%= result.product_img %>>
+								<h3><%= result.product_name %></h3>
+								<p><%= "$" + result.price %></p>
+							</div>
+						</a>
+				<% }); %>		
+		</div>
+	</main>
+	<%- include('../partials/footer') %>
+
+</body>
+
+</html>

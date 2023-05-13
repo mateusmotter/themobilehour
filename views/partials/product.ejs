@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Product</title>
+</head>
+<body>
+    <%- include('header') %>
+    <main>
+        <h2>Product:</h2>
+        <div class="product_box">
+            <img src=<%= `${rows[0].product_img}` %>>
+            <h3><%= rows[0].product_name %></h3>
+            <h4><%= rows[0].manufacturer %></h4>
+            <p><%= "$" + rows[0].price %></p>
+            <button class="btn">ADD TO CART</button>
+        </div>
+    </main>
+    <%- include('footer') %>
+</body>
+</html>
