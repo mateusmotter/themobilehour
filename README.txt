@@ -10,9 +10,9 @@ npm install bcrypt
 
 Database credentials:
 
-  host: 'LocalHost',
-  user: 'root',
-  password: 'mateus1993',
+  host: 'xxx',
+  user: 'xxx',
+  password: 'xxx',
 
 Please, note that in the above credentials are listed in each of the js files that need database connection
 
