@@ -1,3 +1,6 @@
+This project was part of a TAFE assignment to practice database integration to a front-end website. I used node.js with the express library and a mySQL database.
+
+
 Please, the details needed to run this website:
 
 Dependencies:
